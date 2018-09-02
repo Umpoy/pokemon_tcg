@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
 
-        <link rel="stylesheet" href="assets/css/style.css
+    <link rel="stylesheet" href="assets/css/style.css
         ">
 
     <title>Pokemon TCG Finder</title>
@@ -19,7 +19,13 @@
 <body>
     <div class="container">
         <h1>Pokemon TCG Finder</h1>
-        <input type="text" placeholder="Enter Pokemon Name">
+        <form autocomplete="off">
+            <div class="autocomplete">
+                <input type="text" id="pokemonName" placeholder="Enter Pokemon's Name">
+
+            </div>
+            <input type="submit">
+        </form>
     </div>
 
     <!-- Optional JavaScript -->
