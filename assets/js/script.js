@@ -98,3 +98,26 @@ function autocomplete(inp, arr) {
 }
 
 autocomplete(document.getElementById("pokemonName"), Pokemon);
+
+$("form").submit(function () {
+    var pokemonName = $("#pokemonName").val();
+    console.log(pokemonName)
+    getPokemon(pokemonName);
+    event.preventDefault();
+});
+
+
+function getPokemon(str) {
+    $.ajax({
+        dataType: "json",
+        url: "https://api.pokemontcg.io/v1/cards?name=" + str,
+        type: 'get',
+        success: function (data) {
+            data.cards.forEach(function (card) {
+                console.log(card.imageUrl)
+                var current_card = $("<img>").attr("src", card.imageUrl)
+                $("body").append(current_card)
+            })
+        }
+    })
+}
