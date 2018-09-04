@@ -106,30 +106,34 @@ $("form").submit(function () {
     event.preventDefault();
 });
 
-
 function getPokemon(str) {
     $.ajax({
         dataType: "json",
         url: "https://api.pokemontcg.io/v1/cards?name=" + str,
         type: 'get',
         success: function (data) {
+            $('.hold_cards').html('');
+            var cards_array = [];
             data.cards.forEach(function (card) {
-                console.log(card.imageUrl)
-                var current_card = $("<img>").attr("src", card.imageUrl)
-                $("body").append(current_card)
-            })
-        }
-    })
-}
+                var current_card = $("<img>").attr("src", card.imageUrl).addClass("animated bounceInUp")
+                // $(".hold_cards").append(current_card)
+                cards_array.push(current_card)
+            });
+            var render_cards = setInterval(function () {
+                if (cards_array.length === 0) {
+                    clearInterval(render_cards)
+                }
+                $(".hold_cards").append(cards_array[0])
+                cards_array.splice(0, 1);
+            }, 100)
 
-function doStuff() {
-    $.ajax({
-        url: "pokemon.php",
-        dataType: "text",
-        method: "get",
-        success: function (data) {
-            var shadowDom = new DOMParser().parseFromString(data, "text/html");
-            console.log(shadowDom);
+            // var interval = setInterval(function(){
+            //     console.log(i);
+            //     i--;
+            //     if(i == 0){
+            //       clearInterval(interval)
+            //     }
+            //   },1000)
         }
     })
 }
