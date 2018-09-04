@@ -121,3 +121,15 @@ function getPokemon(str) {
         }
     })
 }
+
+function doStuff() {
+    $.ajax({
+        url: "pokemon.php",
+        dataType: "text",
+        method: "get",
+        success: function (data) {
+            var shadowDom = new DOMParser().parseFromString(data, "text/html");
+            console.log(shadowDom);
+        }
+    })
+}
