@@ -80,7 +80,7 @@ function getPokemon(str) {
             $('.hold_cards').html('');
             var cards_array = [];
             data.cards.forEach(function (card) {
-                var current_card = $("<img>").attr("src", card.imageUrl).addClass("animated bounceInUp")
+                var current_card = $("<img>").attr("src", card.imageUrl).addClass("animated zoomInUp")
                 cards_array.push(current_card)
             });
             var render_cards = setInterval(function () {

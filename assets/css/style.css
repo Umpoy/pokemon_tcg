@@ -54,5 +54,20 @@ input[type=submit] {
     background-color: DodgerBlue !important; 
     color: #ffffff; 
 }
+
   
 
+.center {
+    margin: 100px 0;
+    text-align: center;
+}
+
+.hold_cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.hold_cards img {
+    min-width: 25%;
+}
