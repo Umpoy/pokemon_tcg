@@ -1,6 +1,6 @@
 # Pokemon TCG Finder
 
-![](assets/images/ygo_memory_match.png)
+![](assets/img/poke-finder.png)
 
 ## Overview
 
