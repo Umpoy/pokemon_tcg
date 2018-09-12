@@ -69,5 +69,5 @@ input[type=submit] {
 }
 
 .hold_cards img {
-    min-width: 25%;
+     margin: 10px auto;
 }
