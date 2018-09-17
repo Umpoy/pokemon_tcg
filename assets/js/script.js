@@ -1,4 +1,16 @@
+$(document).ready(initialize);
 
+function initialize() {
+    autocomplete(document.getElementById("pokemonName"), Pokemon);
+    $("form").submit(function () {
+        var pokemonName = $("#pokemonName").val();
+        console.log(pokemonName)
+        getPokemon(pokemonName);
+        event.preventDefault();
+    });
+}
+
+//Start of W3school's code
 function autocomplete(inp, arr) {
     var currentFocus;
     inp.addEventListener("input", function (e) {
@@ -64,13 +76,8 @@ function autocomplete(inp, arr) {
         closeAllLists(e.target);
     });
 }
-autocomplete(document.getElementById("pokemonName"), Pokemon);
-$("form").submit(function () {
-    var pokemonName = $("#pokemonName").val();
-    console.log(pokemonName)
-    getPokemon(pokemonName);
-    event.preventDefault();
-});
+//End of W3School's code
+
 function getPokemon(str) {
     $.ajax({
         dataType: "json",
